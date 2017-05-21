@@ -10,14 +10,12 @@ public class Rectangle extends AbstractShape {
 		this.a = b;
 	}
 
-	@Override
+
 	public double getArea() {
 		return a*b;
 	}
 
-	public double getA() {
-		return a;
-	}
+	public double getA() {return a;}
 
 	public double getB() {
 		return b;
