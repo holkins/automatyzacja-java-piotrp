@@ -8,6 +8,6 @@ package codesprinters.autojava;
 public interface Shape {
 
     double getArea();
-    void getName();
+    String getName();
 
 }

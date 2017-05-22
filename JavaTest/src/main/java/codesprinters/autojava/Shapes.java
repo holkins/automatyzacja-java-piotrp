@@ -1,6 +1,8 @@
 package codesprinters.autojava;
 
 
+import java.util.ArrayList;
+
 public class Shapes {
 
 	/**
@@ -17,9 +19,7 @@ public class Shapes {
 	 */
 	public static void main(String[] args) {
 
-		// nie mam pomyslu jak to poprawic...
-		ArrayList<Shape> shapes = new ArrayList<String>();
-
+		ArrayList<Shape> shapes = new ArrayList<Shape>();
 
 
 		Rectangle rectangle1 = new Rectangle(5.0, 6.0);
@@ -29,35 +29,42 @@ public class Shapes {
         System.out.println("Created " + square1.getName() + " with side : " + square1.getSide());
 
 		Triangle triangle1 = new Triangle(2.0, 2.0, 2.0);
-		System.out.println("Created " + triangle1.getName() + " with sides : " + triangle1.getA() + "/" + triangle1.getB() + "/" + triangle1.getC() );
+		System.out.println("Created " + triangle1.getName() + " with sides : " + triangle1.getA() + "/" + triangle1.getB() + "/" + triangle1.getC());
 
 		Circle circle1 = new Circle(3.0);
-        System.out.println("Created " + circle1.getName() + " with sides : " + circle1.getR() + "/" + circle1.getR() );
+        System.out.println("Created " + circle1.getName() + " with radius : " + circle1.getR());
 
 		Hex hex1 = new Hex(1.0);
 		System.out.println("Created " + hex1.getName() + " with side : " + hex1.getSide());
+
 
 		shapes.add(rectangle1);
 		shapes.add(square1);
 		shapes.add(triangle1);
 		shapes.add(circle1);
 		shapes.add(hex1);
-		
-		for (Shapes s: shapes) {
-			System.out.println(s.getName() + " " s.getArea());
+
+
+		for (Shape s: shapes) {
+			System.out.println(s.getName() + " area = " + s.getArea());
 		}
 		
 		for (Shape s1: shapes) {
 			for (Shape s2: shapes) {
-				if (s1!=s1) {
-					System.out.println("Comparing " + s1.getName() + " with " + s2.getName() + " -> " + larger(s1, s1).getName());
+				if (s1.getArea()!=s2.getArea()) {
+					System.out.println("Comparing " + s1.getName() + " with " + s2.getName() + " -> " + larger(s1, s2).getName());
 				}
 			}
 		}
 	}
 	
 	static private Shape larger(Shape s1, Shape s2) {
-		return s1.getArea() >= s2.getArea() ? s2 : s1;
+		return s1.getArea() >= s2.getArea() ? s1 : s2;
+		/*
+		if (s1.getArea() >= s2.getArea()){
+			return s1;
+		} else return s2;
+		*/
 	}
 
 }
