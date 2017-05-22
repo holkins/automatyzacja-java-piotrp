@@ -51,20 +51,17 @@ public class Shapes {
 		
 		for (Shape s1: shapes) {
 			for (Shape s2: shapes) {
-				if (s1.getArea()!=s2.getArea()) {
+				if (s1!=s2) {
 					System.out.println("Comparing " + s1.getName() + " with " + s2.getName() + " -> " + larger(s1, s2).getName());
 				}
 			}
 		}
+
+
 	}
 	
 	static private Shape larger(Shape s1, Shape s2) {
 		return s1.getArea() >= s2.getArea() ? s1 : s2;
-		/*
-		if (s1.getArea() >= s2.getArea()){
-			return s1;
-		} else return s2;
-		*/
 	}
 
 }
