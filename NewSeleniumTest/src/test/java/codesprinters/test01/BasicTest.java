@@ -1,5 +1,6 @@
 package codesprinters.test01;
 
+import codesprinters.pos.TestBase;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Test;
@@ -20,34 +21,26 @@ public class BasicTest {
 
 
     @Test
-    public void verifyIfGoogleFindsCodeSprinters() throws InterrulptedException {
+    public void verifyIfGoogleFindsCodeSprinters() throws Exception {
 
-        System.setProperty("webdriver.gecko.driver", "C:\\drivers\\old\\geckodriver.exe");
 
-        WebDriver driver = new FirefoxDriver();
 
-        driver.manage().deleteAllCookies();
-        driver.manage().timeouts().implicitlyWait(3000, TimeUnit.MILLISECONDS);
-        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS); // czy strona sie zaladowala w 10s (czas na zaladowanie wszystkich watkow), jesli nie to ubija test(?)
-        driver.manage().window().maximize();
 
+
+/*
         driver.get("https://www.google.com");
         WebElement googleSearchBox = driver.findElement(By.name("q"));
         googleSearchBox.sendKeys("Code Sprinters");
         googleSearchBox.sendKeys(Keys.ENTER);
         WebElement codeSprinters = driver.findElement(By.xpath("//a[text()='Code Sprinters -']"));
         codeSprinters.click();
-        Thread.sleep(5000);
 
         String currentURL = driver.getCurrentUrl();
         System.out.println(currentURL);
 
         Thread.sleep(5000);
         Assert.assertEquals(currentURL, "http://agileszkolenia.pl/");
-        Thread.sleep(5000);
+*/
 
-        if (driver != null) {
-            driver.close();
-        }
     }
 }
