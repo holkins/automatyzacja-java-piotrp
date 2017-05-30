@@ -33,9 +33,6 @@ public class CodeSprintersTests extends TestBase {
 
         String currentURL = driver.getCurrentUrl();
 
-        Assert.assertTrue(
-                currentURL.endsWith(CodeSprintersPage.CODESPRINTERS_URL)
-        );
     }
 
 }
